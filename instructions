@@ -1,0 +1,24 @@
+1. Build images & containers 
+>  docker-compose up
+
+2. Create django project in app directory
+>  docker-compose run --rm app sh -c "django-admin startproject project_name ."
+
+3. Modify settings.py file to get env var (secretkey debug dbhost dbname dbuser dbpass)
+
+4. Make migrations for db
+>  docker-compose run --rm app sh -c "python manage.py makemigrations"
+
+
+
+Start app service
+>  docker-compose start app
+
+Start all services
+>  docker-compose start
+
+Create Superuser
+>  docker-compose run --rm app sh -c "python manage.py createsuperuser"
+
+Create app in django project
+>  docker-compose exec app sh -c "python manage.py startapp app_name"
